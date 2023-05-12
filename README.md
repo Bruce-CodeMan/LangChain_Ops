@@ -72,3 +72,4 @@ python main.py
 
 **3). Finally, the Vector Database to find the most similairty answer**
 
+<img src="./langchain_csv/images/csv.png">
