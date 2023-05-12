@@ -22,3 +22,16 @@ for i, v in enumerate(pdf_reader.pages):
 
 print(raw_text[:10])
 ```
+
+**2. Using PyPDFLoader**
+
+```
+from langchain.document_loaders import PyPDFLoader
+
+loader = PyPDFLoader("Your file Path")
+
+doc = loader.load()
+
+print(doc[0])
+```
+
