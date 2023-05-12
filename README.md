@@ -5,9 +5,9 @@
 -->
 # 🦜️🔗 LangChain 
 
-## **📖 How to read the PDF file**
+## **📖 How to read the PDF file(Here are three methods)**
 
-**1. Using PyPDF2**
+**1). Using PyPDF2**
 
 ```
 from PyPDF2 import PdfReader
@@ -23,7 +23,7 @@ for i, v in enumerate(pdf_reader.pages):
 print(raw_text[:10])
 ```
 
-**2. Using PyPDFLoader**
+**2). Using PyPDFLoader**
 
 ```
 from langchain.document_loaders import PyPDFLoader
@@ -35,7 +35,7 @@ doc = loader.load()
 print(doc[0])
 ```
 
-**3. Using PyMuPDFLoader**
+**3). Using PyMuPDFLoader**
 
 ```
 from langchain.document_loaders improt PyMuPDFLoader
@@ -63,3 +63,12 @@ python main.py
 # You can input the question what you want to know about the careforsow.pdf
 # You can change your PDF file to query the questions.
 ```
+
+## **📖 How to read the CSV file(Here are three steps)**
+
+**1). Using `CSVLoader` to extract the content,split that multiple chunks, and use the OpenAI to store the vectors**
+
+**2). When the user input the question**
+
+**3). Finally, the Vector Database to find the most similairty answer**
+
