@@ -35,3 +35,18 @@ doc = loader.load()
 print(doc[0])
 ```
 
+**3. Using PyMuPDFLoader**
+
+```
+from langchain.document_loaders improt PyMuPDFLoader
+
+loader = PyMuPDFLoader("Your file Path")
+
+doc = loader.load()
+```
+
+## **🚀 How to choose the PDF method?**
+
+```
+PyMuPDFLoader is the fastest of the PDF parsing options, and contains detailed metadata about the PDF and its pages, as well as returns one document per page
+```
