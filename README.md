@@ -48,5 +48,7 @@ doc = loader.load()
 ## **🚀 How to choose the PDF method?**
 
 ```
-PyMuPDFLoader is the fastest of the PDF parsing options, and contains detailed metadata about the PDF and its pages, as well as returns one document per page
+PyMuPDFLoader is the fastest of the PDF parsing options, 
+And contains detailed metadata about the PDF and its pages, 
+As well as returns one document per page
 ```
