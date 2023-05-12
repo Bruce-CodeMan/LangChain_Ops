@@ -52,3 +52,14 @@ PyMuPDFLoader is the fastest of the PDF parsing options,
 And contains detailed metadata about the PDF and its pages, 
 As well as returns one document per page
 ```
+
+## **👀 LangChain + PDF**
+
+```
+cd langchain_pdf
+
+python main.py
+
+# You can input the question what you want to know about the careforsow.pdf
+# You can change your PDF file to query the questions.
+```
