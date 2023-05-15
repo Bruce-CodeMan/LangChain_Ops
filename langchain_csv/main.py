@@ -12,7 +12,7 @@ from langchain.chains import RetrievalQA
 from langchain.llms import OpenAI
 
 # Set the Environment variable, just change your own account
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "sk-xxx"
 
 loader = CSVLoader(file_path="./price.csv",
                     csv_args={
