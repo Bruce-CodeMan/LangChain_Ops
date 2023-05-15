@@ -14,6 +14,7 @@ from langchain.llms import OpenAI
 # Set the Environment variable, just change your own account
 os.environ["OPENAI_API_KEY"] = "sk-xxx"
 
+# Load the csv file
 loader = CSVLoader(file_path="./price.csv",
                     csv_args={
                         'delimiter': ',',
