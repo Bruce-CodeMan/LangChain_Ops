@@ -12,7 +12,7 @@ from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import Chroma
 
 # Set the Environment variable, just change your own account
-os.environ["OPENAI_API_KEY"] = "sk-xx"
+os.environ["OPENAI_API_KEY"] = "sk-xxx"
 
 # Read the PDF
 loader = PyMuPDFLoader("./careforsow.pdf")
