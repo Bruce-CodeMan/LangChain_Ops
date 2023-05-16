@@ -9,7 +9,7 @@
 
 **1). Using PyPDF2**
 
-```
+```python
 from PyPDF2 import PdfReader
 
 pdf_reader = PdfReader("Your file path")
@@ -25,7 +25,7 @@ print(raw_text[:10])
 
 **2). Using PyPDFLoader**
 
-```
+```python
 from langchain.document_loaders import PyPDFLoader
 
 loader = PyPDFLoader("Your file Path")
@@ -37,7 +37,7 @@ print(doc[0])
 
 **3). Using PyMuPDFLoader**
 
-```
+```python
 from langchain.document_loaders improt PyMuPDFLoader
 
 loader = PyMuPDFLoader("Your file Path")
@@ -76,7 +76,7 @@ python main.py
 
 ## **📖 How to get the info of bilibili**
 
-```
+```python
 pip install bilibili-api-python
 ```
 
