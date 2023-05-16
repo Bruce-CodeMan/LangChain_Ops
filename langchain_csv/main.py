@@ -3,7 +3,6 @@ Date: 2023-05-12 14:59:21
 Author: Bruce
 Description: 
 '''
-from json import load
 import os
 from langchain.document_loaders.csv_loader import CSVLoader
 from langchain.embeddings.openai import OpenAIEmbeddings
