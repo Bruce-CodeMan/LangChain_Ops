@@ -73,3 +73,28 @@ python main.py
 **3). Finally, the Vector Database to find the most similairty answer**
 
 <img src="./langchain_csv/images/csv.png">
+
+## **📖 How to get the info of bilibili**
+
+```
+pip install bilibili-api-python
+```
+
+**1). Get the information of bilibili**
+
+```python
+import asyncio
+from bilibili_api import video
+
+async def main() -> None:
+    # Instantiate an object
+    v = video.Video(bvid="BV1uv411q7Mv")
+    # Get the detailed information video
+    info = await v.get_info()
+    # Print the information
+    print(info)
+
+if __name__ == '__main__':
+    asyncio.get_event_loop().run_until_complete(main())
+```
+
