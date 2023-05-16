@@ -88,7 +88,7 @@ from bilibili_api import video
 
 async def main() -> None:
     # Instantiate an object
-    v = video.Video(bvid="BV1uv411q7Mv")
+    v = video.Video(bvid="xxx")
     # Get the detailed information video
     info = await v.get_info()
     # Print the information
@@ -98,3 +98,24 @@ if __name__ == '__main__':
     asyncio.get_event_loop().run_until_complete(main())
 ```
 
+**1). How to like a video**
+
+```python
+import asyncio
+from decouple import config
+from bilibili_api import video, Credential
+
+async def main() -> None:
+    # Instantiate the objects
+    credential = Credential(
+        sessdata=config("SESSDATA"),
+        bili_jct=config("BILI_JCT"),
+        buvid3=config("BUVID3"),
+    )
+    v = video.Video(bvid="xxx", credential=credential)
+    # like the video
+    await v.like(True)
+
+if __name__ == '__main__':
+    asyncio.get_event_loop().run_until_complete(main())
+```
