@@ -3,6 +3,7 @@ import whisper
 from langchain.llms import OpenAI
 from langchain.document_loaders import YoutubeLoader
 from pytube import YouTube
+from datetime import datetime
 
 os.environ["OPENAI_API_KEY"] = "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"
 
@@ -35,4 +36,5 @@ transcription = model.transcribe(mp3_file_path)
 
 res = transcription["text"]
 
-print(res)
+# Split the text into the srt file
+
