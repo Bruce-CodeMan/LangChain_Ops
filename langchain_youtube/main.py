@@ -36,5 +36,4 @@ transcription = model.transcribe(mp3_file_path)
 
 res = transcription["text"]
 
-# Split the text into the srt file
 
