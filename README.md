@@ -136,5 +136,23 @@ result = loader.load()
 **2). Get the information of Youtube**
 
 ```python
+# pip install pytube
+from pytube import YouTube
 
+# the URL of the Youtube video
+url = "https://www.youtube.com/watch?v=C_78DM8fG6E"
+
+video = YouTube(url, use_oauth=True, allow_oauth_cache=True)
+
+audio = video.streams.filter(only_audio=True).first()
+
+# Get the title of the Youtube video
+video_title = video.streams[0].title
+
+video.streams.get_highest_resolution().filesize
+
+audio = video.streams.get_audio_only()
+
+# Download the video
+audio.download(output_path="temp")
 ```
