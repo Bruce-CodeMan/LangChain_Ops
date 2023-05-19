@@ -122,8 +122,23 @@ if __name__ == '__main__':
 
 ## **📖 How to get the info of youtube**
 
-```
-YoutubeLoader
-pytube
+**1). Get the information of Youtube**
+
+```python
+# pip install youtube-transcript-api
+from langchain.document_loaders import YoutubeLoader
+
+loader = YoutubeLoader.from_youtube_url("https://www.youtube.com/watch?v=C_78DM8fG6E")
+
+result = loader.load()
 ```
 
+**2). Get the information of Youtube**
+
+```python
+# pip install pytube
+
+loader = YoutubeLoader.from_youtube_url("https://www.youtube.com/watch?v=QsYGlZkevEg")
+
+result = loader.load()
+```
