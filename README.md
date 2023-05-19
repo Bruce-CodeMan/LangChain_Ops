@@ -136,9 +136,5 @@ result = loader.load()
 **2). Get the information of Youtube**
 
 ```python
-# pip install pytube
 
-loader = YoutubeLoader.from_youtube_url("https://www.youtube.com/watch?v=QsYGlZkevEg")
-
-result = loader.load()
 ```
