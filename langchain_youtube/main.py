@@ -3,13 +3,14 @@ import whisper
 from langchain.llms import OpenAI
 from langchain.document_loaders import YoutubeLoader, SRTLoader
 from langchain.text_splitter import TokenTextSplitter
+from langchain.chains.summarize import load_summarize_chain
+from langchain import OpenAI
 from pytube import YouTube
-from datetime import datetime
 
 # Imports Custome Function
 from temp import utils
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "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"
 
 # Download the youtube file
 # loader = YoutubeLoader.from_youtube_url("https://www.youtube.com/watch?v=C_78DM8fG6E")
@@ -41,7 +42,7 @@ os.environ["OPENAI_API_KEY"] = "sk-31QKtUkAftzzglxo3eMGT3BlbkFJYaHbeWm43GBnLtTvM
 
 # utils.transcribe_audio(transcription)
 
-# Using SRTLoader to read srt file
+# Use SRTLoader to read srt file
 loader = SRTLoader("./temp/sample.srt")
 data = loader.load()
 
@@ -49,4 +50,7 @@ data = loader.load()
 text_splitter = TokenTextSplitter.from_tiktoken_encoder(chunk_size=100, chunk_overlap=0)
 docs = text_splitter.split_documents(data)
 
-print(docs)
+llm = OpenAI(temperature=0)
+print("Starting to summarize the video")
+chain = load_summarize_chain(llm, chain_type="refine", verbose=False)
+print(chain.run(docs))
