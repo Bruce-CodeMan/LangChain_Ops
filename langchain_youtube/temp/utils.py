@@ -1,5 +1,5 @@
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 def transcribe_audio(segments):
@@ -12,7 +12,7 @@ def transcribe_audio(segments):
         start_time = str(0) + str(timedelta(seconds=int(segment['start']))) + ',000'
         end_time = str(0) + str(timedelta(seconds=int(segment['end']))) + ',000'
         text = segment['text']
-        segment_id = segment['Id'] + 1
+        segment_id = segment['id'] + 1
         segment = f"{segment_id}\n{start_time} --> {end_time}\n{text[1:] if text[0] == ' ' else text}\n"
 
         srt_filename = os.path.join(f"{video_filename}.srt")

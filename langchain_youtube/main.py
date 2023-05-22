@@ -1,12 +1,17 @@
 import os
 import whisper
 from langchain.llms import OpenAI
-from langchain.document_loaders import YoutubeLoader
+from langchain.document_loaders import YoutubeLoader, SRTLoader
+from langchain.text_splitter import TokenTextSplitter
 from pytube import YouTube
 from datetime import datetime
 
-os.environ["OPENAI_API_KEY"] = "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"
+# Imports Custome Function
+from temp import utils
 
+os.environ["OPENAI_API_KEY"] = "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"
+
+# Download the youtube file
 # loader = YoutubeLoader.from_youtube_url("https://www.youtube.com/watch?v=C_78DM8fG6E")
 
 # result = loader.load()
@@ -27,13 +32,21 @@ os.environ["OPENAI_API_KEY"] = "sk-IzUSTzA9a0koyJ4jL8R0T3BlbkFJjTQ5f2fFfKQoDkI2a
 
 # audio.download(output_path="temp")
 
-model = whisper.load_model("base")
+# model = whisper.load_model("base")
 
-mp3_file_path = "./temp/sample.mp4"
+# mp3_file_path = "./temp/sample.mp4"
 
 # About one minute
-transcription = model.transcribe(mp3_file_path)
+# transcription = model.transcribe(mp3_file_path)
 
-res = transcription["text"]
+# utils.transcribe_audio(transcription)
 
+# Using SRTLoader to read srt file
+loader = SRTLoader("./temp/sample.srt")
+data = loader.load()
 
+# Split the data
+text_splitter = TokenTextSplitter.from_tiktoken_encoder(chunk_size=100, chunk_overlap=0)
+docs = text_splitter.split_documents(data)
+
+print(docs)
