@@ -38,7 +38,7 @@ print(doc[0])
 **3). Using PyMuPDFLoader**
 
 ```python
-from langchain.document_loaders improt PyMuPDFLoader
+from langchain.document_loaders import PyMuPDFLoader
 
 loader = PyMuPDFLoader("Your file Path")
 
